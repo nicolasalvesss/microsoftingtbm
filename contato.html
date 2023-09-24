@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Contato</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/jpg" href="Imagens/logo_para_remover_bg-removebg-preview.png" />
+    <link rel="stylesheet" href="estilo.css">
+    <script>
+        const formulario = document.getElementById('formulario');
+        const email = document.getElementById('email');
+        const nome = document.getElementById('nome');
+        const telefone = document.getElementById('telefone');
+        const emailError = document.getElementById('emailError');
+        const nomeError = document.getElementById('nomeError');
+        const telefoneError = document.getElementById('telefoneError');
+    
+        formulario.addEventListener('submit', function (e) {
+            let valid = true;
+    
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
+                emailError.textContent = 'Email inválido';
+                valid = false;
+            } else {
+                emailError.textContent = '';
+            }
+    
+            if (nome.value.trim() === '') {
+                nomeError.textContent = 'Nome é obrigatório';
+                valid = false;
+            } else {
+                nomeError.textContent = '';
+            }
+            if (!valid) {
+                e.preventDefault(); // Impede o envio do formulário se houver erros
+            }
+        });
+    </script>
+        
+</head>
+
+<body>
+    <header id="cabecalho">
+        <h1><img src="Imagens/logo_para_remover_bg-removebg-preview.png"></h1>
+        <nav>
+            <ul>
+                <li><a href="index.html" >Home</a></li>
+                <li><a href="microsoftsoftwares.html">Sobre</a></li>
+                <li><a href="modelo.html">Modelo</a></li>
+                <li><a href="contato.html"class="ativa">Contato</a></li>
+            </ul>
+        </nav>
+        <div id="cabecalhoidi">
+            <li><a href="index.html" class="ativa">PT </a></li>
+            <li><a href="indexing.html">ING</a></li>
+        </div>
+    </header>
+
+    <div class="contato">
+        <p id="contato"> Entre em contato:</p>
+        <br>
+        
+        <form id="formulario" action="fim_contato.html" method="get">
+            <div class="name">
+
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+                <span id="nomeError" class="error"></span>
+            </div>
+            <!---------------------------------->
+            <div class="telefone">
+                <br>
+                <label for="telefone">Telefone:</label>
+                <input type="tel" id="telefone" name="telefone" required>
+                <span id="telefoneError" class="error"></span>
+            </div>
+
+            <!---------------------------------->
+            <div class="email">
+                <br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <span id="emailError" class="error"></span>
+            </div>
+            <textarea id="mensagem" name="mensagem"></textarea>
+            <div class="buttons">
+                <button type="submit">Enviar</button>
+                <button type="reset">Limpar</button>
+            </div>
+        </form >
+
+    </div>
+    
+    <div class="responsividade">
+
+        <footer>
+            <p> Nicolas Vilela 2023 - &copyTodos os direitos reservados<br>Trabalho Acadêmico - sem fins lucrativos</p>
+            <a href="#"><img src="Imagens/seta para cima.svg"></a>
+        </footer>
+    </div>
+</body>
+
+</html>
