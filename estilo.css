@@ -617,6 +617,7 @@ form input[type="submit"]:hover {
     /*cabeçalho do site home, sobre, contato*/
     #cabecalhoidi{
         justify-content: center;
+        margin-right:60px;
     }
     #cabecalho {
 
